@@ -248,8 +248,13 @@ label {
 
 /* inline Link */
 .registerLink {
-  margin-top: 2rem;
   color: var(--primary-color);
   font-weight: 600;
-  margin-bottom: 3rem;
+}
+
+.registerLinkContainer {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

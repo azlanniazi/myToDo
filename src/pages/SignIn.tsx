@@ -6,9 +6,7 @@ function SignIn() {
   return (
     <main className={styles.authContainer}>
       <SignInForm></SignInForm>
-      <Link to="/signup" className="registerLink">
-        Sign Up Instead
-      </Link>
+      
     </main>
   );
 }

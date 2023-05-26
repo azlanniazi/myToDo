@@ -5,7 +5,7 @@ import { FieldState, FormReducerActionType, InputFieldType } from "../../types";
 import { signInFields } from "../../utils/formsData";
 import { auth } from "../../firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 interface SignInFormStateType {
@@ -78,10 +78,6 @@ export default function SignInForm() {
     }
   };
 
-  const handleOnSignupClick = () => {
-    navigate("signup");
-  };
-
   return (
     <Card className="formContainer">
       <form className="form" onSubmit={handleSubmit}>
@@ -103,6 +99,12 @@ export default function SignInForm() {
           </button>
         </div>
       </form>
+      <div className="registerLinkContainer">
+        <p>Are You a new User ? </p>
+        <Link to="/signup" className="registerLink">
+          Sign Up Instead
+        </Link>
+      </div>
     </Card>
   );
 }

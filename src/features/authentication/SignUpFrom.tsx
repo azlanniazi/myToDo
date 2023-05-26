@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase.config";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // defining interface of state of signup form
 interface signUpStateType {
   email: FieldState;
@@ -122,9 +122,14 @@ function SignUpFrom() {
           <button className="btn btn-primary" type="submit">
             Sign up
           </button>
-          <button className="btn">Close</button>
         </div>
       </form>
+      <div className="registerLinkContainer">
+        <p>Are You a new User ? </p>
+        <Link to="/signup" className="registerLink">
+          Sign Up Instead
+        </Link>
+      </div>
     </Card>
   );
 }
