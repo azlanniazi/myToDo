@@ -247,8 +247,9 @@ label {
 }
 
 /* inline Link */
-.inlineLink {
-  padding: 0.5rem 1rem;
-  font-size: large;
+.registerLink {
+  margin-top: 2rem;
   color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 3rem;
 }
