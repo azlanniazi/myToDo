@@ -1,0 +1,33 @@
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 1.5rem;
+  justify-content: space-between;
+}
+
+.noteTitle {
+  display: flex;
+  font-size: 0.875rem;
+  width: 100%;
+  font-weight: 300;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.projectTitle {
+  background: #6d28d9;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  color: #ddd6fe;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.75rem;
+}
+.noteActions {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}

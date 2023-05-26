@@ -1,0 +1,20 @@
+.wholePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.insideContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+}

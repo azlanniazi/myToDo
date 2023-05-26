@@ -1,0 +1,15 @@
+/* style for the whole container of duration Picker */
+.durationPicker {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.durationValue {
+  border-bottom: 2px solid rgb(166, 125, 232);
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}

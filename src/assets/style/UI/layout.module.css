@@ -1,0 +1,13 @@
+.layout {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  height: 100vh;
+  grid-template-rows: 5rem 1fr;
+}
+
+@media (max-width: 40rem) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+}

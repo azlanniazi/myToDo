@@ -1,0 +1,27 @@
+.innerLayoutCol1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.innerLayoutCol2 {
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  grid-template-rows: 1fr;
+}
+
+/* .content {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+@media (max-width: 40rem) {
+  .innerLayoutCol2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .innerLayoutCol1 {
+    align-items: normal;
+  }
+}

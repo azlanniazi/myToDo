@@ -1,0 +1,31 @@
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+}
+
+
+
+.taskTitleAndPlay {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.taskTitleAndPlay p {
+  padding-bottom: 4px;
+}
+
+.currentTask {
+  border-bottom: 1px solid #6d28d9;
+}
+.priamryIcon {
+  color: #6d28d9;
+}
+
+.taskDuration {
+  display: flex;
+  gap: 0.5rem;
+}

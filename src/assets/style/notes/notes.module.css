@@ -1,0 +1,22 @@
+.notes {
+  position: relative;
+  background: rgba(221, 214, 254, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.closeNotes {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 500;
+}

@@ -1,0 +1,62 @@
+.noteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(
+    109.6deg,
+    rgb(237, 246, 250) 100.2%,
+    #ddd6fe 11.2%
+  );
+  /* background: ; */
+}
+
+.noteTitle {
+  position: relative;
+  padding: 1rem 1.5rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  background-color: #4c1d95;
+  color: #eeedf1e7;
+  border-radius: 8px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.noteActions {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
+
+.noteContent {
+  background: linear-gradient(
+    109.6deg,
+    rgb(237, 246, 250) 100.2%,
+    #ddd6fe 11.2%
+  ) !important;
+}
+.content textarea {
+  padding: 1rem 0.5rem;
+  background: #ddd6fe4d;
+}
+
+.content textarea:active,
+.content textarea:focus {
+  background: #ddd6fe4d;
+  overflow: hidden;
+  transform: scale(1);
+}
+
+.content label {
+  display: inline-block;
+  padding: 1rem 0.5rem;
+  font-size: 1.125rem;
+}
+.noteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

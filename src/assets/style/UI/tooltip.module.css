@@ -1,0 +1,17 @@
+.tooltipContainer {
+  position: absolute;
+  bottom: -140%;
+  right: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  border: 1px solid #ddd6fe;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.tooltip {
+  color: #ddd6fe;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  text-align: center;
+}
