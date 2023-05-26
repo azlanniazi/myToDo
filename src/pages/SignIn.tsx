@@ -4,7 +4,8 @@ import styles from "../assets/style/authPage.module.css";
 function SignIn() {
   return (
     <main className={styles.authContainer}>
-      <SignInForm></SignInForm>;
+      <SignInForm></SignInForm>
+    
     </main>
   );
 }
