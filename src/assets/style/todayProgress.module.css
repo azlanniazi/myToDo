@@ -8,17 +8,26 @@
   color: #ded7fe;
 }
 
-.remaining,
-.worked,
-.withoutBreak {
+.progressChild {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
 
+.progressTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 40rem) {
+  .progressChild {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .progressTitle {
-    display: none;
+    font-size: 0.75rem;
   }
 }
