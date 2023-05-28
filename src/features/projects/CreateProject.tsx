@@ -3,11 +3,7 @@ import { Card, Modal } from "../../components/UI";
 import { FieldState, FormReducerActionType, InputFieldType } from "../../types";
 import { createProjectFields } from "../../utils/formsData";
 import Input from "../../components/UI/Input";
-import {
-  closeProjectForm,
-  createProject,
-  useAppDispatch,
-} from "../../store";
+import { closeProjectForm, createProject, useAppDispatch } from "../../store";
 import { auth } from "../../firebase.config";
 
 // defining types of create Project State

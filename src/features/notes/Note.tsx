@@ -21,6 +21,9 @@ interface NoteProp {
 
 function Note({ id }: NoteProp) {
   const note = useAppSelector((state) => selectNotesbyId(state, id))!;
+  const project = useAppSelector((state) =>
+    selectProjectById(state, note.projectId)
+  );
   const crudStatus = useAppSelector(getNoteCrudStatus);
   const dispatch = useAppDispatch();
 
@@ -46,12 +49,15 @@ function Note({ id }: NoteProp) {
   };
   return (
     <Card className={styles.note}>
-      <div className={styles.noteTitle} onClick={handleOnClick}>
-        <TextSnippetIcon
-          data-tip=""
-          style={{ fontSize: "1.125rem" }}
-        ></TextSnippetIcon>
-        <p>{note.title}</p>
+      <div className={styles.noteDescription} onClick={handleOnClick}>
+        <div className={styles.noteTitle}>
+          <TextSnippetIcon
+            data-tip=""
+            style={{ fontSize: "1.125rem" }}
+          ></TextSnippetIcon>
+          <p>{note.title}</p>
+        </div>
+        <p className={styles.projectTitle}>{project?.title}</p>
       </div>
       <div className={styles.noteActions}>
         <IconButton tip="Edit Note" onClick={handleOnEdit}>

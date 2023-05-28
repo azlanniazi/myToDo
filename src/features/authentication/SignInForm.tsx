@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, useReducer } from "react";
-import { Card } from "../../components/UI";
+import { ChangeEvent, FormEvent, useReducer, useState } from "react";
+import { Card, Spinner } from "../../components/UI";
 import Input from "../../components/UI/Input";
 import { FieldState, FormReducerActionType, InputFieldType } from "../../types";
 import { signInFields } from "../../utils/formsData";
@@ -42,6 +42,7 @@ const formReducer = (
 };
 
 export default function SignInForm() {
+  const [loading, setLoading] = useState(false);
   const [formData, formDispatch] = useReducer(formReducer, initialFormState);
   const isFormValid = formData.email.isValid && formData.email.isValid;
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ export default function SignInForm() {
     const password = formData.password.value;
 
     if (isFormValid) {
+      setLoading(true);
       try {
         const userCredential = await signInWithEmailAndPassword(
           auth,
@@ -74,9 +76,16 @@ export default function SignInForm() {
         }
       } catch (error) {
         toast.error("Failed to Log In");
+      } finally {
+        setLoading(false);
       }
     }
   };
+
+  if (loading) {
+    console.log("loading");
+    return <Spinner type="wholePage"></Spinner>;
+  }
 
   return (
     <Card className="formContainer">

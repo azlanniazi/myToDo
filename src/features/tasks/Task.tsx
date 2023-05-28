@@ -9,6 +9,7 @@ import PauseOutlinedIcon from "@mui/icons-material/PauseOutlined";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+import RemoveDoneOutlinedIcon from "@mui/icons-material/RemoveDoneOutlined";
 
 import styles from "../../assets/style/tasks/tasks.module.css";
 import { useAppDispatch, useAppSelector } from "../../store";
@@ -88,6 +89,11 @@ function Task({ id }: TaskProps) {
     dispatch(updateTask({ id, field: "completed", value: true }));
   };
 
+  // callback function to mark task as incomplete
+  const handleOnInComplete = () => {
+    dispatch(updateTask({ id, field: "completed", value: false }));
+  };
+
   if (deletingThisTask) {
     return (
       <Card className={classes}>
@@ -111,7 +117,7 @@ function Task({ id }: TaskProps) {
               ></PlayArrowIcon>
             )}
           </div>
-          <p>{task.title}</p>
+          <p className={styles.taskTitle}>{task.title}</p>
         </div>
         {/* rendering elapsed time and duration of a task using TaskTimeTrackor
         component */}
@@ -141,9 +147,16 @@ function Task({ id }: TaskProps) {
               </IconButton>
             </>
           )}
-          <IconButton tip="Mark Done" onClick={handleOnComplete}>
-            <DoneOutlinedIcon></DoneOutlinedIcon>
-          </IconButton>
+          {!task.completed && (
+            <IconButton tip="Mark Done" onClick={handleOnComplete}>
+              <DoneOutlinedIcon></DoneOutlinedIcon>
+            </IconButton>
+          )}
+          {task.completed && (
+            <IconButton tip="Mark Undone" onClick={handleOnInComplete}>
+              <RemoveDoneOutlinedIcon></RemoveDoneOutlinedIcon>
+            </IconButton>
+          )}
           <IconButton tip="Delete Task" onClick={handleDeleteTask}>
             <DeleteForeverOutlinedIcon className="classRed classIcon"></DeleteForeverOutlinedIcon>
           </IconButton>

@@ -52,6 +52,7 @@ const NavBar = function () {
           <MenuOutlinedIcon></MenuOutlinedIcon>
         </IconButton>
       </div>
+      <h3 className={styles.logo}>My Todo</h3>
       <div className={styles.navLinks}>
         <div className={styles.taskStatus}>
           {currentTaskId ? (

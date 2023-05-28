@@ -16,11 +16,9 @@ import {
   where,
 } from "firebase/firestore";
 import { auth, db } from "../firebase.config";
-import { RootState, useAppSelector } from "./store";
+import { RootState } from "./store";
 import { toast } from "react-toastify";
-import { setUpdatingTask } from "./tasksSlice/tasksSlice";
 import { closeProjectForm } from "./UISlice";
-import { Root } from "react-dom/client";
 
 // defining type of Project Slice State
 interface ProjectSliceType {
@@ -39,7 +37,7 @@ const projectAdapter = createEntityAdapter<ProjectType>({
 // adding dummy projects to normalized projects data
 const initialProjects: EntityState<ProjectType> = projectAdapter.addMany(
   projectAdapter.getInitialState(),
-  [{ id: "project1", userRef: "user1", title: "project1" }]
+  [{ id: "Today", userRef: "userRef", title: "Today" }]
 );
 // defining initial project state
 const initialState: ProjectSliceType = {

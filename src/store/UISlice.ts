@@ -20,7 +20,7 @@ const initialState: UISliceState = {
   showCompleteTaskPrompt: false,
   currentNoteId: null,
   showNoteForm: false,
-  showNotes: true,
+  showNotes: false,
   showProjectForm: false,
   showTaskForm: false,
   showSingleNote: false,

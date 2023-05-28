@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, useReducer } from "react";
-import { Card } from "../../components/UI";
+import { ChangeEvent, FormEvent, useReducer, useState } from "react";
+import { Card, Spinner } from "../../components/UI";
 import Input from "../../components/UI/Input";
 import { FieldState, FormReducerActionType, InputFieldType } from "../../types";
 import { signUpFields } from "../../utils/formsData";
@@ -8,6 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase.config";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import { createProject, useAppDispatch } from "../../store";
 // defining interface of state of signup form
 interface signUpStateType {
   email: FieldState;
@@ -47,6 +48,7 @@ const formReducer = (
 // react component to render signupForm
 function SignUpFrom() {
   const [formData, formDispatch] = useReducer(formReducer, initialFormState);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   let isFormValid =
     formData.password2.isValid &&
@@ -75,6 +77,7 @@ function SignUpFrom() {
       const password = formData.password.value;
       const username = formData.userName.value;
 
+      setLoading(true);
       try {
         const userCredentials = await createUserWithEmailAndPassword(
           auth,
@@ -82,10 +85,11 @@ function SignUpFrom() {
           password
         );
         const user = userCredentials.user;
+        const userRef = user.uid;
         updateProfile(user, { displayName: username });
 
         const userData = { email, password, username };
-        const userDocRef = doc(db, "users", user.uid);
+        const userDocRef = doc(db, "users", userRef);
         await setDoc(userDocRef, userData);
 
         formDispatch({ type: "RESET" });
@@ -93,10 +97,13 @@ function SignUpFrom() {
         navigate("/");
       } catch (error) {
         toast.error("Failed to Sign up ");
+      } finally {
+        setLoading(false);
       }
     }
   };
 
+  if (loading) return <Spinner type="wholePage"></Spinner>;
   return (
     <Card className="formContainer">
       <form className="form" onSubmit={handleSubmit}>
@@ -125,9 +132,9 @@ function SignUpFrom() {
         </div>
       </form>
       <div className="registerLinkContainer">
-        <p>Are You a new User ? </p>
+        <p>Already a User?</p>
         <Link to="/signup" className="registerLink">
-          Sign Up Instead
+          Sign in Instead
         </Link>
       </div>
     </Card>

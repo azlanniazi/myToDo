@@ -15,16 +15,17 @@
   flex-direction: row;
   gap: 0.25rem;
 }
+.noteDescription {
+  display: flex;
+  flex-direction: column;
+}
 
 .projectTitle {
   background: #6d28d9;
-  padding: 0.25rem 0.5rem;
+  padding: 0.125rem;
   border-radius: 8px;
   color: #ddd6fe;
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
 }
 .noteActions {
   display: flex;

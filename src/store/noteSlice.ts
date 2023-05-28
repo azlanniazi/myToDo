@@ -45,7 +45,7 @@ const DUMMY_NOTES: NoteType[] = [
 
 // defining a initial state of noteslice
 const initialState: NoteSliceState = {
-  notes: notesAdapter.addMany(notesAdapter.getInitialState(), DUMMY_NOTES),
+  notes: notesAdapter.getInitialState(),
   fetchingStatus: "idle",
   crudStatus: "idle",
   currentNote: null,
