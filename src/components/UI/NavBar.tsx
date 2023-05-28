@@ -44,7 +44,11 @@ const NavBar = function () {
   return (
     <nav className={styles.mainNav}>
       <div className={styles.hamburger}>
-        <IconButton tip="Open Menu" onClick={handleOnOpenMenu}>
+        <IconButton
+          tip="Open Menu"
+          onClick={handleOnOpenMenu}
+          style={{ right: "-300%" }}
+        >
           <MenuOutlinedIcon></MenuOutlinedIcon>
         </IconButton>
       </div>

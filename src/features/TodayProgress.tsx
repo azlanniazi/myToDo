@@ -22,17 +22,17 @@ function TodayProgress() {
   return (
     <Card className={styles.todayProgress}>
       <div className={styles.remaining}>
-        {showMobileNav && <p>Remaining Time:</p>}
+        {<p className={styles.progressTitle}>Remaining Time:</p>}
         <AvTimerOutlinedIcon className="classGray"></AvTimerOutlinedIcon>
         <TaskTimeTrackor time={timeRemaining}></TaskTimeTrackor>
       </div>
       <div className={styles.worked}>
-        {showMobileNav && <p>Worked Today:</p>}
+        <p className={styles.progressTitle}>Worked Today:</p>
         <AccessTimeOutlinedIcon className="classGray"></AccessTimeOutlinedIcon>
         <TaskTimeTrackor time={totalElapsedTime}></TaskTimeTrackor>
       </div>
       <div className={styles.withoutBreak}>
-        {showMobileNav && <p>Without Break:</p>}
+        <p className={styles.progressTitle}>Without Break:</p>
         <TimerOutlinedIcon className="classGray"></TimerOutlinedIcon>
         <TaskTimeTrackor time={withoutBreak}></TaskTimeTrackor>
       </div>

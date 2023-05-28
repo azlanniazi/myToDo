@@ -6,9 +6,10 @@ interface IconButtonProps {
   tip: string;
   onClick: () => void;
   children: JSX.Element;
+  style?: { [key: string]: string };
 }
 
-function IconButton({ tip, onClick, children }: IconButtonProps) {
+function IconButton({ tip, onClick, children, style }: IconButtonProps) {
   const [hovering, setHovering] = useState(false);
 
   const handleOnMouseEnter = () => {
@@ -27,7 +28,7 @@ function IconButton({ tip, onClick, children }: IconButtonProps) {
       >
         {children}
       </button>
-      {hovering && <Tooltip text={tip}></Tooltip>}
+      {hovering && <Tooltip style={style} text={tip}></Tooltip>}
     </div>
   );
 }
