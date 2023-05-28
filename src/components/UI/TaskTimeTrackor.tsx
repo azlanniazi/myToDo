@@ -13,7 +13,7 @@ function TaskTimeTracker({ time }: TaskTimeTrackerProps) {
 
   return (
     <div>
-      <span className={styles.trackerText}>{duration}</span>
+      <p className={styles.trackerText}>{duration}</p>
     </div>
   );
 }
