@@ -228,6 +228,9 @@ label {
     min-width: 0;
     margin: 2rem 0.25rem;
   }
+  .actions {
+    gap: 0.25rem;
+  }
 }
 
 /* Title */
