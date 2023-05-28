@@ -52,7 +52,6 @@ const NavBar = function () {
           <MenuOutlinedIcon></MenuOutlinedIcon>
         </IconButton>
       </div>
-      <h1>Logo</h1>
       <div className={styles.navLinks}>
         <div className={styles.taskStatus}>
           {currentTaskId ? (
