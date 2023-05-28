@@ -15,12 +15,12 @@ function CompletedTask() {
   if (tasks.length === 0)
     return (
       <div className={styles.tasksContainer}>
-        <h4>Completed Tasks</h4>
         <p>No Completed Task</p>
       </div>
     );
   return (
     <div className={styles.completedTasks}>
+      <h4>Completed Tasks</h4>
       <div className={styles.tasksContainer}>{tasksList}</div>;
     </div>
   );
