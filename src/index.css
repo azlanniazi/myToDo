@@ -126,12 +126,22 @@ label {
 }
 
 /* basic style of forms */
+
+.formContainer {
+  width: 100%;
+}
+
+.authFormContainer {
+  width: 25rem;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 35rem;
   padding: 1rem 2rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .formTitle {
@@ -173,6 +183,7 @@ label {
 }
 .showError {
   color: red;
+  word-wrap: break-word;
 }
 
 .actionBtn {
@@ -223,16 +234,6 @@ label {
   justify-content: center;
 }
 
-@media (max-width: 40rem) {
-  .content {
-    min-width: 0;
-    margin: 2rem 0.25rem;
-  }
-  .actions {
-    gap: 0.25rem;
-  }
-}
-
 /* Title */
 .title {
   position: relative;
@@ -256,8 +257,25 @@ label {
 }
 
 .registerLinkContainer {
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+@media (max-width: 40rem) {
+  .content {
+    min-width: 0;
+    margin: 2rem 0.25rem;
+  }
+  .actions {
+    gap: 0.25rem;
+  }
+  .authFormContainer {
+    width: 18rem;
+  }
+
+  .form {
+    width: 100%;
+  }
 }

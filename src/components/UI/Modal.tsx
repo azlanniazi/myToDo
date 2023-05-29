@@ -21,7 +21,7 @@ interface ModalOverlayProps {
 const ModalOverlay = ({ children, style }: ModalOverlayProps) => {
   return (
     <div className={classes.modal} style={style}>
-      <div className={classes.content}>{children}</div>
+      {children}
     </div>
   );
 };

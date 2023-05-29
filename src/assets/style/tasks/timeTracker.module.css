@@ -1,5 +1,11 @@
 .trackerText {
-  text-align: start;
-  width: 2.75rem;
+}
+
+.big {
+  font-size: 1rem;
+  width: 4rem;
+}
+.small {
   font-size: 0.75rem;
+  width: 2.7rem;
 }

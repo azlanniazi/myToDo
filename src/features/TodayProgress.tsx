@@ -25,17 +25,20 @@ function TodayProgress() {
         <AvTimerOutlinedIcon className="classGray"></AvTimerOutlinedIcon>
         <p className={styles.progressTitle}>Remaining Time:</p>
 
-        <TaskTimeTrackor time={timeRemaining}></TaskTimeTrackor>
+        <TaskTimeTrackor fontSize="big" time={timeRemaining}></TaskTimeTrackor>
       </div>
       <div className={styles.progressChild}>
         <AccessTimeOutlinedIcon className="classGray"></AccessTimeOutlinedIcon>
         <p className={styles.progressTitle}>Worked Today:</p>
-        <TaskTimeTrackor time={totalElapsedTime}></TaskTimeTrackor>
+        <TaskTimeTrackor
+          fontSize="big"
+          time={totalElapsedTime}
+        ></TaskTimeTrackor>
       </div>
       <div className={styles.progressChild}>
         <TimerOutlinedIcon className="classGray"></TimerOutlinedIcon>
         <p className={styles.progressTitle}>Without Break:</p>
-        <TaskTimeTrackor time={withoutBreak}></TaskTimeTrackor>
+        <TaskTimeTrackor fontSize="big" time={withoutBreak}></TaskTimeTrackor>
       </div>
     </Card>
   );

@@ -105,11 +105,9 @@ function SignUpFrom() {
 
   if (loading) return <Spinner type="wholePage"></Spinner>;
   return (
-    <Card className="formContainer">
+    <Card className="authFormContainer">
       <form className="form" onSubmit={handleSubmit}>
-        <h2 className="formTitle">
-          Create a new Account <br></br> Sign up
-        </h2>
+        <h2 className="formTitle">Sign Up</h2>
         {Object.values(signUpFields).map(
           ({ pattern, id, ...field }: InputFieldType) => (
             <Input
@@ -133,7 +131,7 @@ function SignUpFrom() {
       </form>
       <div className="registerLinkContainer">
         <p>Already a User?</p>
-        <Link to="/signup" className="registerLink">
+        <Link to="/signin" className="registerLink">
           Sign in Instead
         </Link>
       </div>

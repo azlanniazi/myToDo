@@ -122,18 +122,20 @@ function Task({ id }: TaskProps) {
         {/* rendering elapsed time and duration of a task using TaskTimeTrackor
         component */}
         <div className={styles.taskDuration}>
-          <TaskTimeTrackor time={task.duration}></TaskTimeTrackor>
+          <TaskTimeTrackor
+            fontSize="small"
+            time={task.elapsedTime}
+          ></TaskTimeTrackor>
           <span>/</span>
-          <TaskTimeTrackor time={task.elapsedTime}></TaskTimeTrackor>
+          <TaskTimeTrackor
+            fontSize="small"
+            time={task.duration}
+          ></TaskTimeTrackor>
         </div>
         {/* Actions of Task */}
         <div className="actions">
           {thisTaskRunning ? (
-            <IconButton
-              // onMouseDown={}
-              onClick={handleStopTask}
-              tip="Stop Task"
-            >
+            <IconButton onClick={handleStopTask} tip="Stop Task">
               <PauseOutlinedIcon className="classIcon"></PauseOutlinedIcon>
             </IconButton>
           ) : (

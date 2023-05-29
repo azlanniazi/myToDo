@@ -88,11 +88,9 @@ export default function SignInForm() {
   }
 
   return (
-    <Card className="formContainer">
+    <Card className="authFormContainer">
       <form className="form" onSubmit={handleSubmit}>
-        <h2 className="formTitle">
-          Already a User<br></br> Sign In
-        </h2>
+        <h2 className="formTitle">Sign In</h2>
         {Object.values(signInFields).map((field: InputFieldType) => (
           <Input
             key={field.id}
